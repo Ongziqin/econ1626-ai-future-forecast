@@ -158,24 +158,42 @@ data: {
 labels: ["2026","2027","2028","2029","2030"],
 datasets: [
 {
-label: "Baseline",
-data: [2.0,2.1,2.3,2.4,2.5],
-borderColor: "blue"
+label: "Baseline (Gradual AI Adoption)",
+data: [2.0, 2.15, 2.35, 2.55, 2.70],
+borderColor: "blue",
+tension: 0.3
 },
 {
-label: "AI Upside",
-data: [2.0,2.6,3.3,3.9,4.5],
-borderColor: "green"
+label: "Upside (High AI Productivity Shock)",
+data: [2.0, 2.40, 2.95, 3.60, 4.20],
+borderColor: "green",
+tension: 0.3
 },
 {
-label: "Downside",
-data: [2.0,1.8,1.6,1.5,1.4],
-borderColor: "red"
+label: "Downside (Regulatory + Adoption Friction)",
+data: [2.0, 1.90, 1.75, 1.60, 1.50],
+borderColor: "red",
+tension: 0.3
 }
 ]
+},
+options: {
+plugins: {
+title: {
+display: true,
+text: "Projected Australian GDP Growth under AI Scenarios (2026–2030)"
+}
+},
+scales: {
+y: {
+title: {
+display: true,
+text: "GDP Growth (%)"
+}
+}
+}
 }
 });
-
 // Employment exposure
 new Chart(document.getElementById("jobChart"), {
 type: "bar",
