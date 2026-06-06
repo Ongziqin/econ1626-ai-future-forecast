@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI and the Australian Economy 2027–2030</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial; margin: 40px; line-height: 1.6; background:#0b0f19; color:#e6e6e6; }
+h1,h2 { color:#7dd3fc; }
+section { margin-bottom: 60px; }
+.card { background:#111827; padding:20px; border-radius:12px; margin:10px 0; }
+canvas { background:white; border-radius:10px; padding:10px; }
+</style>
+</head>
 
+<body>
+
+<h1>AI and the Australian Economy (2027–2030): A Scenario Forecast</h1>
+
+<section class="card">
+<h2>Thesis</h2>
+<p>
+Artificial Intelligence will act as a general-purpose technology reshaping Australia’s economy through productivity gains,
+labour substitution in routine cognitive tasks, and structural shifts across mining, services, education, and healthcare.
+By 2030, outcomes depend heavily on adoption speed, policy response, and labour market adaptation.
+</p>
+</section>
+
+<section class="card">
+<h2>Economic Mechanisms</h2>
+<ul>
+<li><b>Productivity Shock:</b> AI reduces marginal cost of cognitive labour</li>
+<li><b>Task Automation:</b> 20–40% of tasks in services exposed</li>
+<li><b>Wage Polarisation:</b> High-skill workers gain, mid-skill roles compressed</li>
+<li><b>Capital Shift:</b> Investment flows into compute + data infrastructure</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>GDP Forecast Scenarios</h2>
+<canvas id="gdpChart"></canvas>
+</section>
+
+<section class="card">
+<h2>Employment Transition</h2>
+<canvas id="jobChart"></canvas>
+</section>
+
+<section class="card">
+<h2>Scenario Summary</h2>
+<p><b>Baseline:</b> Gradual adoption, +1.5% productivity uplift</p>
+<p><b>Upside:</b> Rapid diffusion, +3% productivity, strong wage growth</p>
+<p><b>Downside:</b> Regulation + disruption, inequality increases, slow diffusion</p>
+</section>
+
+<section class="card">
+<h2>Policy Implications</h2>
+<ul>
+<li>AI reskilling subsidies</li>
+<li>Tax reform for automation gains</li>
+<li>Digital infrastructure investment</li>
+<li>Labour transition insurance systems</li>
+</ul>
+</section>
+
+<script>
+// GDP projection
+new Chart(document.getElementById("gdpChart"), {
+type: "line",
+data: {
+labels: ["2026","2027","2028","2029","2030"],
+datasets: [
+{
+label: "Baseline",
+data: [2.0,2.1,2.3,2.4,2.5],
+borderColor: "blue"
+},
+{
+label: "Upside AI Boom",
+data: [2.0,2.5,3.2,3.8,4.2],
+borderColor: "green"
+},
+{
+label: "Downside",
+data: [2.0,1.8,1.6,1.5,1.4],
+borderColor: "red"
+}
+]
+}
+});
+
+// Jobs shift
+new Chart(document.getElementById("jobChart"), {
+type: "bar",
+data: {
+labels: ["Routine Admin","Manufacturing","Services","Tech","Creative"],
+datasets: [{
+label: "Automation Exposure %",
+data: [70,55,40,25,15],
+backgroundColor: "orange"
+}]
+}
+});
+</script>
+
+</body>
+</html>
