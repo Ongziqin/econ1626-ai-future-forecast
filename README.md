@@ -13,7 +13,7 @@ The project is inspired by AI forecasting approaches and applies economic framew
 ## Live Website
 The interactive essay is hosted using GitHub Pages:
 
-https://github.com/Ongziqin/econ1626-ai-future-forecast.git
+[https://github.com/Ongziqin/econ1626-ai-future-forecast.git](https://ongziqin.github.io/econ1626-ai-future-forecast/forecast.html)
 
 ---
 
