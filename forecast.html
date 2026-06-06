@@ -198,12 +198,43 @@ text: "GDP Growth (%)"
 new Chart(document.getElementById("jobChart"), {
 type: "bar",
 data: {
-labels: ["Admin","Manufacturing","Retail","Finance","Creative"],
-datasets: [{
-label: "Automation Exposure %",
-data: [75,55,45,35,20],
+labels: [
+"Routine Admin Tasks",
+"Manufacturing Production",
+"Retail Operations",
+"Financial Services (Mid-level)",
+"Creative & Strategic Work"
+],
+datasets: [
+{
+label: "AI Automation Exposure (%)",
+data: [78, 60, 48, 38, 22],
 backgroundColor: "orange"
-}]
+},
+{
+label: "AI Augmentation Potential (%)",
+data: [20, 35, 45, 55, 75],
+backgroundColor: "blue"
+}
+]
+},
+options: {
+plugins: {
+title: {
+display: true,
+text: "Task-Based AI Exposure vs Augmentation Potential Across Sectors"
+}
+},
+scales: {
+y: {
+beginAtZero: true,
+max: 100,
+title: {
+display: true,
+text: "Percentage (%)"
+}
+}
+}
 }
 });
 </script>
