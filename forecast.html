@@ -47,6 +47,15 @@ button{
 padding:10px 20px;
 margin:5px;
 cursor:pointer;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:6px;
+transition:0.2s;
+}
+
+button:hover{
+background:#1e293b;
 }
 
 </style>
@@ -69,7 +78,13 @@ cursor:pointer;
 <p>
 Artificial intelligence is becoming one of the most influential technologies in modern economic history. This forecast argues that by 2030 generative AI will significantly increase Australia's productivity and economic output. However, the benefits will not be distributed equally. Without effective policies in education, competition and workforce transition, AI may increase labour market inequality and concentrate economic power among large firms. The future impact of AI will therefore depend not only on technological progress but also on policy choices made during the next five years.
 </p>
+<p>
+This analysis draws on skill-biased technological change theory, where technological progress benefits high-skill workers more than low-skill workers, and Schumpeter’s theory of creative destruction, where innovation replaces outdated economic structures.
+</p>
 
+<p>
+It also reflects labour economics research on task-based automation by David Autor, which explains how AI reshapes rather than fully replaces jobs.
+</p>
 </div>
 
 </section>
@@ -145,6 +160,15 @@ id="slider"
 oninput="updateSlider()">
 
 <p id="sliderValue">50%</p>
+  <div class="card">
+
+<h3>What this simulation shows</h3>
+
+<p>
+This model demonstrates how AI adoption can affect macroeconomic outcomes through productivity gains, GDP growth, and employment changes. As AI adoption increases, productivity rises due to task automation, while employment adjusts as certain tasks become automated and new roles emerge.
+</p>
+
+</div>
 
 <canvas id="scenarioChart"></canvas>
 
@@ -228,8 +252,17 @@ chart.update();
 function updateSlider(){
 
 let value = document.getElementById("slider").value;
-
 document.getElementById("sliderValue").innerHTML = value + "%";
+
+// Convert slider into economic impact
+let productivity = (value * 0.15).toFixed(1);
+let gdp = (value * 0.03).toFixed(2);
+let employment = (100 - value * 0.2).toFixed(1);
+
+// Update chart dynamically
+chart.data.datasets[0].data = [productivity, gdp, employment];
+chart.data.datasets[0].label = "AI Adoption Impact";
+chart.update();
 
 }
 </script>
