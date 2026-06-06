@@ -1,224 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Australia's AI Economy 2030</title>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<style>
-
-body{
-font-family:Arial,sans-serif;
-margin:0;
-line-height:1.7;
-background:#f5f7fa;
-color:#222;
-}
-
-header{
-background:#0f172a;
-color:white;
-padding:80px 20px;
-text-align:center;
-}
-
-section{
-max-width:1000px;
-margin:auto;
-padding:50px 20px;
-}
-
-h1,h2{
-color:#0f172a;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-button{
-padding:10px 20px;
-margin:5px;
-cursor:pointer;
-background:#0f172a;
-color:white;
-border:none;
-border-radius:6px;
-transition:0.2s;
-}
-
-button:hover{
-background:#1e293b;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-<h1>Australia's AI Economy 2030</h1>
-<p>An Interactive Economic Forecast</p>
-</header>
-
-<section id="thesis">
-
-<h2>Thesis</h2>
-
-<div class="card">
-
-<p>
-Artificial intelligence is becoming one of the most influential technologies in modern economic history. This forecast argues that by 2030 generative AI will significantly increase Australia's productivity and economic output. However, the benefits will not be distributed equally. Without effective policies in education, competition and workforce transition, AI may increase labour market inequality and concentrate economic power among large firms. The future impact of AI will therefore depend not only on technological progress but also on policy choices made during the next five years.
-</p>
-<p>
-This analysis draws on skill-biased technological change theory, where technological progress benefits high-skill workers more than low-skill workers, and Schumpeter’s theory of creative destruction, where innovation replaces outdated economic structures.
-</p>
-
-<p>
-It also reflects labour economics research on task-based automation by David Autor, which explains how AI reshapes rather than fully replaces jobs.
-</p>
-</div>
-
-</section>
-
-<section id="mechanisms">
-
-<h2>AI Capabilities and Economic Mechanisms</h2>
-
-<div class="card">
-
-<p>
-Economists classify AI as a potential general-purpose technology similar to electricity and the internet. AI creates economic impact through four major channels.
-</p>
-
-<ul>
-
-<li><b>Task Automation</b> – AI automates routine cognitive work.</li>
-
-<li><b>Productivity Growth</b> – workers can produce more output in less time.</li>
-
-<li><b>Innovation</b> – new products and services emerge.</li>
-
-<li><b>Market Structure Changes</b> – large firms may gain stronger competitive advantages.</li>
-
-</ul>
-
-<p>
-Joseph Schumpeter described innovation as creative destruction, where new technologies continuously replace older ways of producing goods and services. AI may become the next major example of this process.
-</p>
-
-</div>
-
-</section>
-
-<section id="scenarios">
-
-<h2>Scenario Analysis</h2>
-  <div class="card">
-
-<h3>Baseline Scenario</h3>
-
-<p>
-Moderate AI adoption and moderate regulation.
-</p>
-
-<h3>Upside Scenario</h3>
-
-<p>
-Strong education reform and successful AI integration.
-</p>
-
-<h3>Downside Scenario</h3>
-
-<p>
-Rapid automation with weak workforce adaptation.
-</p>
-
-</div>
-
-<button onclick="updateChart('baseline')">Baseline</button>
-
-<button onclick="updateChart('upside')">Upside</button>
-
-<button onclick="updateChart('downside')">Downside</button>
-  <h3>AI Adoption Level</h3>
-
-<input
-type="range"
-min="0"
-max="100"
-value="50"
-id="slider"
-oninput="updateSlider()">
-
-<p id="sliderValue">50%</p>
-  <div class="card">
-
-<h3>What this simulation shows</h3>
-
-<p>
-This model demonstrates how AI adoption can affect macroeconomic outcomes through productivity gains, GDP growth, and employment changes. As AI adoption increases, productivity rises due to task automation, while employment adjusts as certain tasks become automated and new roles emerge.
-</p>
-
-</div>
-
-<canvas id="scenarioChart"></canvas>
-
-</section>
-
-<section id="policy">
-
-<h2>Policy Playbook</h2>
-
-<div class="card">
-
-<ul>
-
-<li>Expand AI literacy and workforce retraining.</li>
-
-<li>Promote competition in AI markets.</li>
-
-<li>Develop transparent AI governance frameworks.</li>
-
-<li>Ensure productivity gains contribute to wage growth.</li>
-
-<li>Invest in digital infrastructure and innovation.</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<section id="methods">
-
-<h2>Methods and Data</h2>
-
-<div class="card">
-
-<p>
-This forecast uses evidence from AI 2027, OECD reports, IMF research, Australian Treasury publications and academic literature on technological change and productivity.
-
-Scenarios were developed using economic reasoning rather than precise prediction. They are intended to illustrate possible futures rather than guarantee outcomes.
-</p>
-
-</div>
-
-</section>
-
 <script>
 
-const ctx=document.getElementById('scenarioChart');
+let currentScenario = "baseline";
 
-const chart=new Chart(ctx,{
+const ctx = document.getElementById('scenarioChart');
+
+const chart = new Chart(ctx,{
 type:'bar',
 data:{
 labels:['Productivity','GDP Growth','Employment'],
@@ -231,42 +17,65 @@ data:[8,1.5,7]
 
 function updateChart(type){
 
+currentScenario = type;
+
+let data;
+
 if(type==='baseline'){
-chart.data.datasets[0].data=[8,1.5,7];
-chart.data.datasets[0].label='Baseline';
+data = [8,1.5,7];
 }
 
 if(type==='upside'){
-chart.data.datasets[0].data=[15,3,10];
-chart.data.datasets[0].label='Upside';
+data = [15,3,10];
 }
 
 if(type==='downside'){
-chart.data.datasets[0].data=[5,0.5,4];
-chart.data.datasets[0].label='Downside';
+data = [5,0.5,4];
 }
+
+chart.data.datasets[0].data = data;
+chart.data.datasets[0].label = type.charAt(0).toUpperCase() + type.slice(1);
 
 chart.update();
 
 }
+
 function updateSlider(){
 
 let value = document.getElementById("slider").value;
 document.getElementById("sliderValue").innerHTML = value + "%";
 
-// Convert slider into economic impact
-let productivity = (value * 0.15).toFixed(1);
-let gdp = (value * 0.03).toFixed(2);
-let employment = (100 - value * 0.2).toFixed(1);
+// base scenario values
+let base;
 
-// Update chart dynamically
-chart.data.datasets[0].data = [productivity, gdp, employment];
-chart.data.datasets[0].label = "AI Adoption Impact";
+if(currentScenario === "baseline"){
+base = [8,1.5,7];
+}
+
+if(currentScenario === "upside"){
+base = [15,3,10];
+}
+
+if(currentScenario === "downside"){
+base = [5,0.5,4];
+}
+
+// AI impact model
+let productivity = base[0] * (0.5 + value/100);
+let gdp = base[1] * (0.5 + value/100);
+let employment = base[2] * (1 - value/200);
+
+// update chart
+chart.data.datasets[0].data = [
+productivity.toFixed(1),
+gdp.toFixed(2),
+employment.toFixed(1)
+];
+
+chart.data.datasets[0].label = currentScenario + " + AI impact";
+
 chart.update();
 
 }
+
 </script>
-
-</body>
-</html>
-
