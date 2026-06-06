@@ -134,6 +134,17 @@ Rapid automation with weak workforce adaptation.
 <button onclick="updateChart('upside')">Upside</button>
 
 <button onclick="updateChart('downside')">Downside</button>
+  <h3>AI Adoption Level</h3>
+
+<input
+type="range"
+min="0"
+max="100"
+value="50"
+id="slider"
+oninput="updateSlider()">
+
+<p id="sliderValue">50%</p>
 
 <canvas id="scenarioChart"></canvas>
 
@@ -198,7 +209,13 @@ chart.data.datasets[0].label='Downside';
 chart.update();
 
 }
+function updateSlider(){
 
+let value = document.getElementById("slider").value;
+
+document.getElementById("sliderValue").innerHTML = value + "%";
+
+}
 </script>
 
 </body>
