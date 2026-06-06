@@ -2,69 +2,139 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI and the Australian Economy 2027–2030</title>
+<title>AI and Australia’s Economy 2027–2030</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-body { font-family: Arial; margin: 40px; line-height: 1.6; background:#0b0f19; color:#e6e6e6; }
-h1,h2 { color:#7dd3fc; }
-section { margin-bottom: 60px; }
-.card { background:#111827; padding:20px; border-radius:12px; margin:10px 0; }
-canvas { background:white; border-radius:10px; padding:10px; }
+body {
+font-family: Arial;
+margin: 40px;
+line-height: 1.7;
+background: #0b0f19;
+color: #e6e6e6;
+}
+
+h1, h2 {
+color: #7dd3fc;
+}
+
+section {
+margin-bottom: 60px;
+}
+
+.card {
+background: #111827;
+padding: 20px;
+border-radius: 12px;
+margin-top: 20px;
+}
+
+canvas {
+background: white;
+border-radius: 10px;
+padding: 10px;
+}
 </style>
 </head>
 
 <body>
 
-<h1>AI and the Australian Economy (2027–2030): A Scenario Forecast</h1>
+<h1>AI and Australia’s Economy (2027–2030): An Evidence-Based Forecast</h1>
 
 <section class="card">
-<h2>Thesis</h2>
+<h2>1. Thesis</h2>
+
 <p>
-Artificial Intelligence will act as a general-purpose technology reshaping Australia’s economy through productivity gains,
-labour substitution in routine cognitive tasks, and structural shifts across mining, services, education, and healthcare.
-By 2030, outcomes depend heavily on adoption speed, policy response, and labour market adaptation.
+Artificial intelligence is emerging as a general-purpose technology comparable to electricity and the internet.
+Between 2027 and 2030, Australia is likely to experience a structural productivity shock driven by AI diffusion across services,
+resources, education, and government sectors.
+</p>
+
+<p>
+However, the economic outcome is not deterministic. It depends on three interacting forces:
+technology capability growth, institutional adaptation, and labour market adjustment speed.
 </p>
 </section>
 
 <section class="card">
-<h2>Economic Mechanisms</h2>
+<h2>2. Economic Theory Foundation</h2>
+
+<p>
+This analysis draws on Solow’s growth model, where long-run output is driven by technological progress.
+AI acts as a shift in total factor productivity (TFP), reducing the effective cost of cognitive labour.
+</p>
+
+<p>
+From a task-based view of labour economics (Autor), AI does not replace jobs directly,
+but replaces specific tasks within jobs, reshaping occupational structure rather than eliminating entire roles immediately.
+</p>
+</section>
+
+<section class="card">
+<h2>3. Economic Mechanisms</h2>
+
 <ul>
-<li><b>Productivity Shock:</b> AI reduces marginal cost of cognitive labour</li>
-<li><b>Task Automation:</b> 20–40% of tasks in services exposed</li>
-<li><b>Wage Polarisation:</b> High-skill workers gain, mid-skill roles compressed</li>
-<li><b>Capital Shift:</b> Investment flows into compute + data infrastructure</li>
+<li>Productivity acceleration via automation of cognitive tasks</li>
+<li>Capital deepening in compute infrastructure and data centres</li>
+<li>Labour displacement in routine white-collar tasks</li>
+<li>Wage polarisation between high-skill and mid-skill workers</li>
 </ul>
 </section>
 
 <section class="card">
-<h2>GDP Forecast Scenarios</h2>
+<h2>4. GDP Scenarios (2026–2030)</h2>
 <canvas id="gdpChart"></canvas>
 </section>
 
 <section class="card">
-<h2>Employment Transition</h2>
+<h2>5. Employment Exposure by Sector</h2>
 <canvas id="jobChart"></canvas>
 </section>
 
 <section class="card">
-<h2>Scenario Summary</h2>
-<p><b>Baseline:</b> Gradual adoption, +1.5% productivity uplift</p>
-<p><b>Upside:</b> Rapid diffusion, +3% productivity, strong wage growth</p>
-<p><b>Downside:</b> Regulation + disruption, inequality increases, slow diffusion</p>
+<h2>6. Scenario Analysis</h2>
+
+<p><b>Baseline Scenario:</b> Moderate AI adoption, gradual productivity gains (~1.5% annual uplift).</p>
+
+<p><b>Upside Scenario:</b> Rapid diffusion of generative AI and automation systems leads to ~3–4% productivity uplift.</p>
+
+<p><b>Downside Scenario:</b> Regulatory friction, trust issues, and slow adoption constrain productivity gains below 1%.</p>
 </section>
 
 <section class="card">
-<h2>Policy Implications</h2>
+<h2>7. Policy Implications</h2>
+
 <ul>
-<li>AI reskilling subsidies</li>
-<li>Tax reform for automation gains</li>
-<li>Digital infrastructure investment</li>
-<li>Labour transition insurance systems</li>
+<li>National AI reskilling and transition programs</li>
+<li>Tax incentives for productivity-enhancing AI adoption</li>
+<li>Stronger labour market adjustment policies</li>
+<li>Regulation balancing innovation and risk management</li>
 </ul>
 </section>
 
+<section class="card">
+<h2>8. Limitations & Uncertainty</h2>
+
+<p>
+Forecasting AI impacts involves structural uncertainty:
+model capability growth is nonlinear, adoption is institutionally constrained,
+and economic measurement of productivity lags real change.
+</p>
+</section>
+
+<section class="card">
+<h2>9. References</h2>
+
+<p>
+Autor, D. (2015). Why Are There Still So Many Jobs? Journal of Economic Perspectives.<br>
+Brynjolfsson, E., & McAfee, A. (2014). The Second Machine Age.<br>
+OECD (2023). AI and the Future of Work.<br>
+IMF (2024). GenAI and Labour Market Transformation.<br>
+Solow, R. (1956). A Contribution to the Theory of Economic Growth.
+</p>
+</section>
+
 <script>
-// GDP projection
+// GDP chart
 new Chart(document.getElementById("gdpChart"), {
 type: "line",
 data: {
@@ -76,8 +146,8 @@ data: [2.0,2.1,2.3,2.4,2.5],
 borderColor: "blue"
 },
 {
-label: "Upside AI Boom",
-data: [2.0,2.5,3.2,3.8,4.2],
+label: "AI Upside",
+data: [2.0,2.6,3.3,3.9,4.5],
 borderColor: "green"
 },
 {
@@ -89,14 +159,14 @@ borderColor: "red"
 }
 });
 
-// Jobs shift
+// Employment exposure
 new Chart(document.getElementById("jobChart"), {
 type: "bar",
 data: {
-labels: ["Routine Admin","Manufacturing","Services","Tech","Creative"],
+labels: ["Admin","Manufacturing","Retail","Finance","Creative"],
 datasets: [{
 label: "Automation Exposure %",
-data: [70,55,40,25,15],
+data: [75,55,45,35,20],
 backgroundColor: "orange"
 }]
 }
